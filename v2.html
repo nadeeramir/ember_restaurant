@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EMBER | Fine Dining Experience</title>
+<style>
+:root{--gold:#d8aa62;--dark:#101010;--soft:#bdb7ad}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--dark);color:#fff;font-family:Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+header{display:flex;align-items:center;justify-content:space-between;padding:22px 7%;background:#111;position:sticky;top:0;z-index:10;border-bottom:1px solid #333}
+.logo{font-size:26px;font-weight:800;letter-spacing:5px;color:var(--gold)}
+nav{display:flex;gap:20px;font-size:14px}
+nav a:hover{color:var(--gold)}
+.hero{min-height:85vh;display:flex;align-items:center;padding:70px 8%;background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.3)),url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600') center/cover}
+.hero-content{max-width:650px}
+.eyebrow{color:var(--gold);letter-spacing:4px;text-transform:uppercase;font-size:12px}
+h1{font-size:clamp(42px,7vw,82px);line-height:1.05;margin:20px 0}
+h2{font-size:clamp(30px,4vw,44px);margin:15px 0}
+p{line-height:1.8;color:var(--soft)}
+.btn{display:inline-block;background:var(--gold);color:#111;padding:15px 25px;margin-top:20px;font-weight:bold;border:0;cursor:pointer}
+.btn:hover{background:#f4c780}
+section{padding:85px 8%}
+.center{text-align:center}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:40px}
+.card{background:#1c1c1c;border:1px solid #333;overflow:hidden}
+.card img{width:100%;height:230px;object-fit:cover}
+.card-body{padding:23px}
+.price{color:var(--gold);font-weight:bold}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center;background:#191919}
+.about img{width:100%;height:400px;object-fit:cover}
+.booking{background:#151515;text-align:center}
+form{max-width:650px;margin:30px auto;display:grid;grid-template-columns:1fr 1fr;gap:15px}
+input,select{width:100%;padding:16px;background:#222;border:1px solid #555;color:white}
+form button{grid-column:1/-1}
+.notice{color:var(--gold);font-size:13px}
+footer{padding:35px;text-align:center;border-top:1px solid #333;color:#aaa}
+@media(max-width:700px){
+header{padding:18px 5%;flex-wrap:wrap;gap:15px}
+nav{gap:12px;font-size:12px}
+.hero{min-height:70vh}
+.grid,.about{grid-template-columns:1fr}
+section{padding:60px 6%}
+form{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header>
+<a href="#" class="logo">EMBER</a>
+<nav>
+<a href="#menu">Menu</a>
+<a href="#story">Our Story</a>
+<a href="#booking">Reservations</a>
+</nav>
+</header>
+
+<div class="hero">
+<div class="hero-content">
+<div class="eyebrow">Fire • Flavor • Experience</div>
+<h1>Where Every Bite Tells a Story.</h1>
+<p>Discover an extraordinary dining experience, where bold flavors meet timeless elegance.</p>
+<a href="#booking" class="btn">RESERVE A TABLE</a>
+</div>
+</div>
+
+<section id="menu">
+<div class="center">
+<div class="eyebrow">Crafted With Passion</div>
+<h2>Our Signature Menu</h2>
+<p>Inspired by fire, perfected with flavor.</p>
+</div>
+<div class="grid">
+<article class="card">
+<img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800" alt="Grilled steak">
+<div class="card-body"><h3>Flame-Grilled Steak</h3><p>Premium beef, grilled to perfection.</p><span class="price">$32</span></div>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=800" alt="Pasta">
+<div class="card-body"><h3>Truffle Pasta</h3><p>Rich cream sauce and aromatic truffle.</p><span class="price">$24</span></div>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800" alt="Dessert">
+<div class="card-body"><h3>Chocolate Indulgence</h3><p>A decadent dessert for chocolate lovers.</p><span class="price">$14</span></div>
+</article>
+</div>
+</section>
+
+<section class="about" id="story">
+<img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1000" alt="Restaurant interior">
+<div>
+<div class="eyebrow">Our Philosophy</div>
+<h2>More Than Dining.</h2>
+<p>At EMBER, we believe exceptional dining brings people together. Every dish is prepared with care, creativity and a passion for unforgettable experiences.</p>
+<a href="#booking" class="btn">EXPERIENCE EMBER</a>
+</div>
+</section>
+
+<section class="booking" id="booking">
+<div class="eyebrow">Your Table Awaits</div>
+<h2>Reserve Your Experience</h2>
+<p>Plan a memorable evening with us.</p>
+<form id="reservationForm">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Email Address" required>
+<input type="date" required>
+<select required>
+<option value="">Number of Guests</option>
+<option>1 Guest</option><option>2 Guests</option>
+<option>3 Guests</option><option>4 Guests</option>
+<option>5+ Guests</option>
+</select>
+<button class="btn" type="submit">REQUEST RESERVATION</button>
+</form>
+<p class="notice" id="message">Demo only — no reservations are submitted.</p>
+</section>
+
+<footer>
+<div class="logo">EMBER</div>
+<p>Fine Dining • Exceptional Moments</p>
+<p>© 2026 EMBER Restaurant. Portfolio demonstration.</p>
+</footer>
+<script>
+document.getElementById('reservationForm').addEventListener('submit',function(e){
+e.preventDefault();
+document.getElementById('message').textContent='Demo preview: reservation details are not sent or saved.';
+});
+</script>
+</body>
+</html>
